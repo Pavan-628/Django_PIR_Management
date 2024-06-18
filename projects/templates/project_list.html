@@ -4,23 +4,29 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 {% block content %}
-  <h2 class="px-4 py-4 text-l bg-slate-400 text-white">Projects</h2>
-  <table >
+  <h2 class="px-4 py-4 text-l bg-slate-600 text-white">Projects</h2>
+  <table class="border-separate">
     <thead class="bg-gray-400">
       <tr>
-        <th>Project Number</th>
-        <th>Project Title</th>
-        <th>Product Number</th>
-        <th>Status</th>
+        <th class="col text-center">PIR Number</th>
+        <th class="col text-center">Project Title</th>
+        <th class="col text-center">Product Number</th>
+        <th class="col text-center">Start Date</th>
+        <th class="col text-center">End Date</th>
+        <th class="col text-center">Outlay</th>
+        <th class="col text-center">Status</th>
       </tr>
     </thead>
     <tbody class="bg-slate-400">
       {% for project in projects %}
-      <tr>
-        <td>{{ project.project_number }}</td>
-        <td>{{ project.title }}</td>
-        <td>{{ project.product_number }}</td>
-        <td>{{ project.get_status_display }}</td>
+      <tr class="row">
+        <td class="col text-center">{{ project.project_number }}</td>
+        <td class="col text-center">{{ project.project_title }}</td>
+        <td class="col text-center">{{ project.product_number }}</td>
+        <td class="col text-center">{{ project.start_date }}</td>
+        <td class="col text-center">{{ project.end_date }}</td>
+        <td class="col text-center">{{ project.approved_hours }}</td>
+        <td class="col text-center">{{ project.get_status_display }}</td>
       </tr>
       {% endfor %}
     </tbody>
