@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+
+<script src="https://cdn.tailwindcss.com"></script>
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  <h2 class="py-4 px-8 bg-slate-600 text-white" >Dashboard</h2>
+  <p>Number of completed projects: {{ completed_projects }}</p>
+  <p>Number of projects in progress: {{ in_progress_projects }}</p>
+{% endblock %}

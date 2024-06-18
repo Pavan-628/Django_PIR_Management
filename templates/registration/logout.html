@@ -1,0 +1,8 @@
+<!-- templates/registration/logout.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <h2 class="py-2 px-8 bg-slate-600 text-white">Logout</h2>
+  <p class="py-2 px-8 bg-slate-600 text-white">You have been logged out. <a href="{% url 'login' %}">Login again</a></p>
+{% endblock %}

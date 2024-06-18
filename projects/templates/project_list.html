@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Projects{% endblock %}
+<script src="https://cdn.tailwindcss.com"></script>
+
+{% block content %}
+  <h2 class="px-4 py-4 text-l bg-slate-400 text-white">Projects</h2>
+  <table >
+    <thead class="bg-gray-400">
+      <tr>
+        <th>Project Number</th>
+        <th>Project Title</th>
+        <th>Product Number</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody class="bg-slate-400">
+      {% for project in projects %}
+      <tr>
+        <td>{{ project.project_number }}</td>
+        <td>{{ project.title }}</td>
+        <td>{{ project.product_number }}</td>
+        <td>{{ project.get_status_display }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
