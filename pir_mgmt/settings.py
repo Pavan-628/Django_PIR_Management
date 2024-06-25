@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 import os
-
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +27,7 @@ SECRET_KEY = "django-insecure-tfe__xs-xq7u1&6=os-we3!+$i%x^64*f-$w2@l82n2qk8z44x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['10.9.216.52', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -84,11 +85,11 @@ WSGI_APPLICATION = "pir_mgmt.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pir_data',
-        'USER': 'root',
-        'PASSWORD': 'Silk9route#',
-        'HOST': 'localhost',  # or your database server IP
-        'PORT': '3306',       # or your database server port
+        'NAME': os.getenv('PIR_DATABASE'),
+        'USER': os.getenv('PIR_DB_USER'),
+        'PASSWORD': os.getenv('PIR_DB_PASSWORD'),
+        'HOST': os.getenv('PIR_DB_HOST'),  # or your database server IP
+        'PORT':os.getenv('PIR_DB_PORT'),       # or your database server port
     }
 }
 

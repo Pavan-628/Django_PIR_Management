@@ -5,9 +5,52 @@
 
 {% block content %}
   <h2 class="py-4 px-1 bg-slate-600 text-white">Add New Project</h2>
-  <form method="post">
+  <form method="post" class="bg-white p-6 rounded-lg shadow-md">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
+    <div class="mb-4">
+      <label for="id_project_number" class="block text-sm font-medium text-gray-700">Project Number</label>
+      {{ form.project_number }}
+  </div>
+  <div class="mb-4">
+    <label for="id_title" class="block text-sm font-medium text-gray-700">Project Title</label>
+    {{ form.project_title }}
+</div>
+<div class="mb-4">
+  <label for="id_project_leader" class="block text-sm font-medium text-gray-700">Project Leader</label>
+  {{ form.project_leader }}
+</div>
+<div class="mb-4">
+  <label for="id_start_date" class="block text-sm font-medium text-gray-700">Start Date</label>
+  {{ form.start_date }}
+</div>
+<div class="mb-4">
+  <label for="id_end_date" class="block text-sm font-medium text-gray-700">End Date</label>
+  {{ form.end_date }}
+</div>
+<div class="mb-4">
+  <label for="id_project_scope" class="block text-sm font-medium text-gray-700">Project Scope of Work</label>
+  {{ form.scope_of_work }}
+</div>
+<div class="mb-4">
+  <label for="id_hours_approved" class="block text-sm font-medium text-gray-700">Number of Hours Approved</label>
+  {{ form.approved_hours }}
+</div>
+<div class="mb-4">
+  <label for="id_product_number" class="block text-sm font-medium text-gray-700">Product Group</label>
+  {{ form.product_number }}
+</div>
+<div class="mb-4">
+  <label for="id_trigger" class="block text-sm font-medium text-gray-700">Trigger</label>
+  {{ form.trigger }}
+</div>
+<div class="mb-4">
+  <label for="id_client_name" class="block text-sm font-medium text-gray-700">Unit</label>
+  {{ form.client_name }}
+</div>
+<div class="mb-4">
+  <label for="id_status" class="block text-sm font-medium text-gray-700">Status</label>
+  {{ form.status }}
+</div>
+    <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Save</button>
   </form>
 {% endblock %}

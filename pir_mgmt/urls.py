@@ -24,5 +24,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('projects/', include('projects.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    #path('login/', include('django.contrib.auth.urls')),
     path('', lambda request: redirect('dashboard', permanent=False)),  # Redirect root URL to /projects/
 ]
