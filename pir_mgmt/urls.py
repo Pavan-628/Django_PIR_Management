@@ -20,10 +20,13 @@ from django.urls import path
 from django.urls import path, include
 from django.shortcuts import redirect
 
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('',include('core.urls'),name='core'),
+    path('',include('account.urls'),name='account'),
     path('projects/', include('projects.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    #path('login/', include('django.contrib.auth.urls')),
-    path('', lambda request: redirect('dashboard', permanent=False)),  # Redirect root URL to /projects/
+    #path('account/', include('account.urls')),
+    path('login/', include('account.urls')),
+    #path('', lambda request: redirect('projects/dashboard', permanent=False)),  # Redirect root URL to /projects/
 ]

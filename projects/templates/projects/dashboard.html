@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+<script src="https://cdn.tailwindcss.com"></script>
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  <!-- <h2 class="py-4 px-8 bg-slate-600 text-white" >Dashboard</h2> -->
+    <!-- This is for debugging only -- Delete from here-->
+    {% if request.user.is_authenticated %}
+    <div class="container  mt-4 flex">
+          <aside class="w-1/6 p-4 bg-slate-600 rounded shadow">
+              <nav>
+                  <ul>
+                      <li class="mb-2"><a href="{% url 'projects:dashboard' %}" class="text-white hover:underline">Dashboard</a></li>
+                      <li class="mb-2"><a href="{% url 'projects:project_list' %}" class="text-white hover:underline">Projects</a></li>
+                      <li class="mb-2"><a href="{% url 'projects:new_project' %}" class="text-white hover:underline">Add New Project</a></li>
+                  </ul>
+              </nav>
+          </aside>
+          <div class="w-5/6 p-4">
+            {% block project %}
+            
+            {% endblock %}
+          </div>  
+        </div>
+      {% endif %}
+      <!-- Delete till here -->  
+  
+{% endblock %}

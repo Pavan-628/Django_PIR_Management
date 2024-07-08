@@ -1,9 +1,9 @@
-{% extends "base_generic.html" %}
+{% extends "projects/dashboard.html" %}
 
 {% block title %}Add New Project{% endblock %}
 <script src="https://cdn.tailwindcss.com"></script>
 
-{% block content %}
+{% block project %}
   <h2 class="py-4 px-1 bg-slate-600 text-white">Add New Project</h2>
   <form method="post" class="bg-white p-6 rounded-lg shadow-md">
     {% csrf_token %}

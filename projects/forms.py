@@ -1,5 +1,7 @@
 from django import forms
 from .models import Project
+from account.models import User
+
 
 class ProjectForm(forms.ModelForm):
     class Meta:
@@ -51,3 +53,9 @@ class ProjectForm(forms.ModelForm):
                 'class': 'form-select mt-1 block w-full'
             }),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['project_leader'].queryset = User.objects.all()
+        self.fields['project_leader'].label_from_instance = lambda obj: obj.name
+        

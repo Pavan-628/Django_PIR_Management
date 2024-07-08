@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['10.9.216.52', 'localhost', '127.0.0.1']
 
+AUTH_USER_MODEL='account.User'
 
 # Application definition
 
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'projects',    #This is the PIR App
+    'core',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -135,4 +138,4 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = 'project_list'
+#LOGIN_REDIRECT_URL = 'projects:dashboard'

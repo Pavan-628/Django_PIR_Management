@@ -1,6 +1,6 @@
-{% extends "base_generic.html" %}
+{% extends "projects/dashboard.html" %}
 
-{% block content %}
+{% block project %}
   <h1>{% if form.instance.pk %}Edit{% else %}New{% endif %} Project</h1>
   <form method="post">
     {% csrf_token %}
